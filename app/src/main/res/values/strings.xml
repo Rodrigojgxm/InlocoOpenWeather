@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">InlocoOpenWeather</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="search_button">Search</string>
+    <string name="search_error">Please select a location</string>
+    <string name="latitude">lat:</string>
+    <string name="longitude">lng:</string>
+    <string name="max_temp">Max Temperature:</string>
+    <string name="min_temp">Min Temperature:</string>
+    <string name="description">Description:</string>
+    <string name="loading">Loading...</string>
+    <string name="waiting">Please Wait</string>
+
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="open_weather_key">49953f985a0ee1ab5714fe65434dbc67</string>
+    <string name="open_weather_url">http://api.openweathermap.org/data/2.5/find?units=metric</string>
+    <string name="open_weather_result_json_key">resultJson</string>
+    <string name="city_wrapper_key">cityWrapper</string>
+</resources>

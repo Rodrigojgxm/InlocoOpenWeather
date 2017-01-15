@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/search_button"
+        android:textSize="8pt"
+        android:id="@+id/search_button"
+        android:onClick="searchLocation"
+        android:background="@color/wallet_holo_blue_light"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:drawableRight="@android:drawable/ic_menu_search">
+    </Button>
+
+    </FrameLayout>
+
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    tools:context="com.rodrigojgxm.inlocoopenweather.activity.MapsActivity" />
+
+
+</LinearLayout>
