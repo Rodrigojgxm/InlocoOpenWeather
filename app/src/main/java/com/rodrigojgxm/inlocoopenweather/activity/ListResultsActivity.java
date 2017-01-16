@@ -16,7 +16,9 @@ import com.rodrigojgxm.inlocoopenweather.util.OpenWeatherJsonParser;
 
 import java.util.List;
 
-
+/**
+ * Classe responsavel por exibir a lista de resultados
+ */
 public class ListResultsActivity extends Activity implements AdapterView.OnItemClickListener {
     private List<CityWeatherWrapper> mCityResultList;
 
@@ -35,6 +37,13 @@ public class ListResultsActivity extends Activity implements AdapterView.OnItemC
 
     }
 
+    /**
+     * Método responsavel por responder ao evento de click no item da lista
+     * @param parent
+     * @param view
+     * @param position
+     * @param id
+     */
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         CityWeatherWrapper cityWeatherWrapper = mCityResultList.get(position);

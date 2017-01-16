@@ -3,7 +3,8 @@ package com.rodrigojgxm.inlocoopenweather.model;
 import java.io.Serializable;
 
 /**
- * Created by Rodrigojgxm on 1/15/2017.
+ * Classe Model, responsavel por guardar os dados de requisição que serão exibidos na tela
+ * Created by Rodrigojgxm.
  */
 
 public class CityWeatherWrapper implements Serializable {

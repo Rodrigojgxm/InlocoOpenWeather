@@ -13,7 +13,8 @@ import com.rodrigojgxm.inlocoopenweather.model.CityWeatherWrapper;
 import java.util.List;
 
 /**
- * Created by Rodrigojgxm on 1/15/2017.
+ * Classe que define como objetos CityWeatherWrapper serão exibidos na tela
+ * Created by Rodrigojgxm.
  */
 
 public class CityWeatherAdapter extends ArrayAdapter<CityWeatherWrapper> {
@@ -27,6 +28,13 @@ public class CityWeatherAdapter extends ArrayAdapter<CityWeatherWrapper> {
         mItens = itens;
     }
 
+    /**
+     * Método responsável pela conversão do objeto CityWeatherWrapper em uma view.
+     * @param position
+     * @param convertView
+     * @param parent
+     * @return
+     */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 

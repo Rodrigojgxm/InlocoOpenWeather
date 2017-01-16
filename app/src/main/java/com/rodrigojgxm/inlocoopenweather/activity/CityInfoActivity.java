@@ -9,6 +9,9 @@ import android.widget.TextView;
 import com.rodrigojgxm.inlocoopenweather.R;
 import com.rodrigojgxm.inlocoopenweather.model.CityWeatherWrapper;
 
+/**
+ * Classe responsavel por exibir os dados de informações da cidade escolhida.
+ */
 public class CityInfoActivity extends Activity {
     private CityWeatherWrapper mWrapper;
 

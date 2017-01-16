@@ -10,7 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Rodrigojgxm on 1/15/2017.
+ * Classe responsavel por converter os dados recebidos na requisição em objetos do tipo CityWeatherWrapper
+ * Created by Rodrigojgxm.
  */
 
 public class OpenWeatherJsonParser {

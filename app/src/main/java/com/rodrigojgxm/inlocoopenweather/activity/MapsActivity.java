@@ -23,6 +23,9 @@ import com.rodrigojgxm.inlocoopenweather.R;
 
 import org.json.JSONObject;
 
+/**
+ * Classe responsavel pelas atividades do mapa e tela inicial da aplicação
+ */
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,
         GoogleMap.OnMapClickListener {
 
@@ -31,6 +34,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Double mLng;
     private ProgressDialog progressDialog;
 
+    /**
+     * Método que carrega o elemento do mapa na activity
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,13 +50,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
+    /**
+     * Método que exibe o mapa na activity
+     * @param googleMap
+     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         mMap.setOnMapClickListener(this);
-
     }
 
+    /**
+     * Método que adiciona um marcador e recupera a latitude e longitude do ponto clicado
+     * @param point
+     */
     @Override
     public void onMapClick(LatLng point) {
         if (point != null){
@@ -66,32 +80,40 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
+    /**
+     * Método responsavel por requisitar dados da api OpenWeather ao clicar no botão
+     * @param v
+     */
     public void searchLocation(View v){
         if(mLat != null & mLng != null){
             String url = new StringBuilder().append(getResources().getString(R.string.open_weather_url))
                     .append("&").append("lat=").append(mLat).append("&lon=").append(mLng).append("&cnt=15&APPID=").
                             append(getResources().getString(R.string.open_weather_key)).toString();
 
-            // Create a client to perform networking
             AsyncHttpClient client = new AsyncHttpClient();
-
+            // Mostra a progress bar enquanto a requisição está sendo processada
             if (progressDialog == null || !progressDialog.isShowing()) {
                 progressDialog = ProgressDialog.show(this, getResources().getString(R.string.loading)
                         , getResources().getString(R.string.waiting), true, false);
             }
 
-
-            // Have the client get a JSONArray of data
-            // and define how to respond
             client.get(url,
                     new JsonHttpResponseHandler() {
-
+                        /**
+                         * verifica se a requisição obteve sucesso ou falha, em caso de sucesso
+                         * a listRestultsActiviy é chamada com os objetos obtidos no JSON em formato
+                         * de String
+                         *
+                         * @param jsonObject
+                         */
                         @Override
                         public void onSuccess(JSONObject jsonObject) {
+
                             Intent it = new Intent(MapsActivity.this,ListResultsActivity.class);
                             it.putExtra(getResources().getString(R.string.open_weather_result_json_key)
                                     ,jsonObject.toString());
                             startActivity(it);
+                            //retira a progress bar
                             progressDialog.dismiss();
 
 
