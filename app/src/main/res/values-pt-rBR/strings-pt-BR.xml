@@ -3,13 +3,15 @@
     <string name="app_name">InlocoOpenWeather</string>
     <string name="title_activity_maps">Mapa</string>
     <string name="search_button">Buscar</string>
+    <string name="loading">Buscando...</string>
+    <string name="waiting">Por favor Espere</string>
+    <string name="open_weather_error_msg">Localização não encontrada, por favor tente outro local</string>
     <string name="search_error">Por Favor selecionar uma Localização</string>
     <string name="latitude">lat:</string>
     <string name="longitude">lng:</string>
     <string name="max_temp">Temperatura máxima:</string>
     <string name="min_temp">Temperatura mínima:</string>
     <string name="description">Descrição do tempo:</string>
-    <string name="loading">Buscando...</string>
-    <string name="waiting">Por favor Espere</string>
+
 
 </resources>

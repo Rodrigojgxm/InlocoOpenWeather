@@ -4,4 +4,12 @@
     <string name="open_weather_url">http://api.openweathermap.org/data/2.5/find?units=metric</string>
     <string name="open_weather_result_json_key">resultJson</string>
     <string name="city_wrapper_key">cityWrapper</string>
+    <string name="inLoco_key">602b59bf4cf26f8c5619c976b480f04a02362c9a4fb6c63d82ef13ffa19411bf</string>
+    <string name="inLoco_device_id">F99AB7B1FE06D95A2DF133483F081F</string>
+
+
+
+
+
+
 </resources>

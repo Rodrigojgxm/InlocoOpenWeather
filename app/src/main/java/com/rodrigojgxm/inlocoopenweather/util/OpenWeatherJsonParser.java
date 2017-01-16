@@ -1,11 +1,9 @@
 package com.rodrigojgxm.inlocoopenweather.util;
 
 import com.rodrigojgxm.inlocoopenweather.model.CityWeatherWrapper;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,11 +1,8 @@
 package com.rodrigojgxm.inlocoopenweather.activity;
 
 import android.app.Activity;
-import android.support.v4.widget.TextViewCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
-
 import com.rodrigojgxm.inlocoopenweather.R;
 import com.rodrigojgxm.inlocoopenweather.model.CityWeatherWrapper;
 

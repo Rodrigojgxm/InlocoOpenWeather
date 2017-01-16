@@ -2,14 +2,11 @@ package com.rodrigojgxm.inlocoopenweather.activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -32,7 +29,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap mMap;
     private Double mLat;
     private Double mLng;
-    private ProgressDialog progressDialog;
+    private ProgressDialog mProgressDialog;
+
 
     /**
      * Método que carrega o elemento do mapa na activity
@@ -46,7 +44,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
 
     }
 
@@ -92,8 +89,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             AsyncHttpClient client = new AsyncHttpClient();
             // Mostra a progress bar enquanto a requisição está sendo processada
-            if (progressDialog == null || !progressDialog.isShowing()) {
-                progressDialog = ProgressDialog.show(this, getResources().getString(R.string.loading)
+            if (mProgressDialog == null || !mProgressDialog.isShowing()) {
+                mProgressDialog = ProgressDialog.show(this, getResources().getString(R.string.loading)
                         , getResources().getString(R.string.waiting), true, false);
             }
 
@@ -108,23 +105,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                          */
                         @Override
                         public void onSuccess(JSONObject jsonObject) {
-
                             Intent it = new Intent(MapsActivity.this,ListResultsActivity.class);
                             it.putExtra(getResources().getString(R.string.open_weather_result_json_key)
                                     ,jsonObject.toString());
                             startActivity(it);
                             //retira a progress bar
-                            progressDialog.dismiss();
-
-
+                            mProgressDialog.dismiss();
                         }
 
                         @Override
                         public void onFailure(int statusCode, Throwable throwable, JSONObject error) {
-                            Toast.makeText(getApplicationContext(), "Error: " + statusCode + " " + throwable.getMessage(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), getResources().getString(R.string.open_weather_error_msg), Toast.LENGTH_LONG).show();
                             Log.e("RJGXM", statusCode + " " + throwable.getMessage());
-                            progressDialog.dismiss();
-
+                            mProgressDialog.dismiss();
                         }
                     });
         }else{
